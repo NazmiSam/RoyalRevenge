@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Sound/Worldmap Theme.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/UI/START.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/QUIT.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/START PRESSED.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/quit pressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/realgametitle.png" type="Texture" id=6]
+[ext_resource path="res://src/Main menu/MainMenu.gd" type="Script" id=7]
+[ext_resource path="res://Assets/background/sky.png" type="Texture" id=8]
+[ext_resource path="res://Assets/background/distant_platforms_2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/background/distant_platforms_1.png" type="Texture" id=10]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource( 7 )
+
+[node name="sky" type="Sprite" parent="."]
+position = Vector2( 956.624, 543.508 )
+scale = Vector2( 120.266, 4.31976 )
+texture = ExtResource( 8 )
+
+[node name="distant_platforms_2" type="Sprite" parent="."]
+position = Vector2( 1030.95, 912.112 )
+scale = Vector2( 4.92735, 4.29112 )
+texture = ExtResource( 9 )
+
+[node name="distant_platforms_1" type="Sprite" parent="."]
+position = Vector2( 837.369, 958.651 )
+scale = Vector2( 4.72595, 3.67648 )
+texture = ExtResource( 10 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.993
+margin_left = 263.0
+margin_top = 106.995
+margin_right = -285.0
+margin_bottom = 3.55444
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_top = 114.0
+margin_right = 1372.0
+margin_bottom = 854.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 26
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+margin_right = 1372.0
+margin_bottom = 437.0
+texture = ExtResource( 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_left = 491.0
+margin_top = 463.0
+margin_right = 881.0
+margin_bottom = 740.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 55
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 390.0
+margin_bottom = 111.0
+texture_normal = ExtResource( 2 )
+texture_focused = ExtResource( 4 )
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 166.0
+margin_right = 390.0
+margin_bottom = 277.0
+texture_normal = ExtResource( 3 )
+texture_focused = ExtResource( 5 )
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]

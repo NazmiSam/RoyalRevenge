@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/snowLedgeRight.png-f50b97e31ea0d21f678f1d1a62b402a9.s3tc.stex"
+path.etc2="res://.import/snowLedgeRight.png-f50b97e31ea0d21f678f1d1a62b402a9.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Tiles/snowLedgeRight.png"
+dest_files=[ "res://.import/snowLedgeRight.png-f50b97e31ea0d21f678f1d1a62b402a9.s3tc.stex", "res://.import/snowLedgeRight.png-f50b97e31ea0d21f678f1d1a62b402a9.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

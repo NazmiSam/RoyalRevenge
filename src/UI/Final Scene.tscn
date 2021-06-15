@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/PiecesNfi-nYYM.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Sound/Retro_No hope.ogg" type="AudioStream" id=2]
+[ext_resource path="res://src/UI/Final Scene.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 33
+extra_spacing_top = 43
+extra_spacing_char = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 57
+extra_spacing_top = 9
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "SETUP"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect/MarginContainer/RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.995911 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Final Scene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 1937.0
+margin_bottom = 1095.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ColorRect"]
+margin_left = 151.0
+margin_top = 214.0
+margin_right = 1790.0
+margin_bottom = 887.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/MarginContainer"]
+margin_right = 1639.0
+margin_bottom = 673.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "
+				Because of you've killed sultan you was cursed by him 
+					he cast a curse which forbade all sons of You as 
+											Laksamana Bentan 
+							to touch the grounds of Kota Tinggi for 
+						eternity or they shall vomit blood to death."
+text = "
+				Because of you've killed sultan you was cursed by him 
+					he cast a curse which forbade all sons of You as 
+											Laksamana Bentan 
+							to touch the grounds of Kota Tinggi for 
+						eternity or they shall vomit blood to death."
+
+[node name="Button" type="Button" parent="CanvasLayer/ColorRect/MarginContainer/RichTextLabel"]
+margin_left = 526.0
+margin_top = 534.0
+margin_right = 1122.0
+margin_bottom = 670.0
+custom_fonts/font = SubResource( 3 )
+text = "CONTINUE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/SETUP = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+[connection signal="pressed" from="CanvasLayer/ColorRect/MarginContainer/RichTextLabel/Button" to="." method="_on_Button_pressed"]

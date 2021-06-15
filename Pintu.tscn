@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Pintu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Tiles/door_closedMid.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Tiles/door_closedTop.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 49.0313, 61.3539 )
+
+[node name="Pintu" type="Area2D"]
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.644379, -87.5155 )
+shape = SubResource( 1 )
+
+[node name="door_closedMid" type="Sprite" parent="."]
+position = Vector2( 4.96918, -60.8352 )
+texture = ExtResource( 2 )
+
+[node name="door_closedTop" type="Sprite" parent="."]
+position = Vector2( 4.97044, -130.632 )
+texture = ExtResource( 3 )
+[connection signal="body_entered" from="." to="." method="_on_Pintu_body_entered"]
+[connection signal="hide" from="CollisionShape2D" to="." method="_on_CollisionShape2D_hide"]
